@@ -7,9 +7,9 @@ function MyApp({ Component, pageProps, router }) {
     <AnimatePresence exitBeforeEnter>
       <motion.div
         key={router.route}
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
+        exit={{ opacity: 0, y: -40 }}
       >
         <Component {...pageProps} />
       </motion.div>

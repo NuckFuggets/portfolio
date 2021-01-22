@@ -9,20 +9,8 @@
   }
 }
 
-.title {
-  color: #01022e;
-  font-weight: normal;
-  font-size: 56px;
-  line-height: 71px;
-
-  color: #01022e;
-  margin-top: 64px;
-  margin-bottom: 32px;
+.grid {
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -42px;
-  margin-top: -32px;
+.main {
 }
