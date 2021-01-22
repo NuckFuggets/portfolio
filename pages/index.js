@@ -17,8 +17,16 @@ const Main = styled.main`
 const Title = styled.h1`
   font-weight: 400;
   font-size: 56px;
-  line-height: 71px;
+  line-height: 1.267857143;
   color: #ffffff;
+  padding: 0 20px;
+  @media (max-width: 500px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 38px;
+  }
 `;
 
 const BoldText = styled.span`

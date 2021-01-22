@@ -6,6 +6,14 @@ import styled from "styled-components";
 const Container = styled.div`
   max-width: 1218px;
   margin: 0 auto;
+
+  @media (max-width: 1302px) {
+    max-width: calc(100% - 84px);
+  }
+
+  @media (max-width: 1024px) {
+    max-width: calc(100% - 40px);
+  }
 `;
 
 const Title = styled.h1`
@@ -15,6 +23,12 @@ const Title = styled.h1`
   line-height: 71px;
   margin-top: 64px;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 48px;
+  }
 `;
 
 const Grid = styled.div`
@@ -22,6 +36,7 @@ const Grid = styled.div`
   flex-wrap: wrap;
   margin-left: -42px;
   margin-top: -32px;
+  margin-bottom: 32px;
 `;
 
 export default function About() {

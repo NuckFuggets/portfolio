@@ -8,11 +8,22 @@ const CardElement = styled.div`
   flex: 0 1 calc(100% / 3);
   padding-left: 42px;
   margin-top: 36px;
+
+  @media (max-width: 1200px) {
+    flex-basis: 50%;
+  }
+
+  @media (max-width: 600px) {
+    flex-basis: 100%;
+  }
 `;
 
 const Image = styled.div`
   min-height: 320px;
   border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 const Header = styled.div`
