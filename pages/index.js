@@ -8,24 +8,6 @@ export default function Home() {
       <Head>
         <title>Home - Joren Rothman</title>
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="preload"
-          as="font"
-          crossOrigin="anonymous"
-          href="/fonts/HKNova-Bold.woff2"
-        />
-        <link
-          rel="preload"
-          as="font"
-          crossOrigin="anonymous"
-          href="/fonts/HKNova-Regular.woff2"
-        />
-        <link
-          rel="preload"
-          as="font"
-          crossOrigin="anonymous"
-          href="/fonts/HKNova-HeavyR.woff2"
-        />
       </Head>
 
       <main className={styles.main}>
