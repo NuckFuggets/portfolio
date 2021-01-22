@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import Head from "next/head";
+import Link from "next/link";
 import data from "../data/work.json";
 import styled from "styled-components";
 
@@ -39,6 +40,24 @@ const Grid = styled.div`
   margin-bottom: 32px;
 `;
 
+const Nav = styled.nav`
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #01022e;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+`;
+
+const LinkSpacer = styled.span`
+  margin-left: 32px;
+  display: inline-block;
+`;
+
 export default function About() {
   return (
     <Container>
@@ -72,6 +91,11 @@ export default function About() {
             <Card key={item.id} {...item}></Card>
           ))}
         </Grid>
+        <Nav>
+          <Link href="/">Home</Link>
+          <LinkSpacer></LinkSpacer>
+          <Link href="/contact">Contact</Link>
+        </Nav>
       </main>
     </Container>
   );
