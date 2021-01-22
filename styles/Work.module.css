@@ -1,0 +1,28 @@
+.container {
+  max-width: 1218px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1302px) {
+  .container {
+    max-width: calc(100% - 84px);
+  }
+}
+
+.title {
+  color: #01022e;
+  font-weight: normal;
+  font-size: 56px;
+  line-height: 71px;
+
+  color: #01022e;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -42px;
+  margin-top: -32px;
+}
