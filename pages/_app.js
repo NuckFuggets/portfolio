@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps, router }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
       >
-        <Component {...pageProps} />
+        <Component {...pageProps} router={router} />
       </motion.div>
     </AnimatePresence>
   );

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Navigation from "../components/Navigation";
 import styled from "styled-components";
 
 const Main = styled.main`
@@ -30,25 +31,7 @@ const BoldText = styled.span`
   font-weight: 900;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  font-size: 24px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-`;
-
-const LinkSpacer = styled.span`
-  margin-left: 32px;
-  display: inline-block;
-`;
-
-export default function Contact() {
+export default function Contact({ router }) {
   return (
     <div>
       <Head>
@@ -61,11 +44,7 @@ export default function Contact() {
           Say <BoldText>hello</BoldText> @
           <br /> <BoldText>rothmanjoren@gmail.com</BoldText>
         </Title>
-        <Nav>
-          <Link href="/">Home</Link>
-          <LinkSpacer></LinkSpacer>
-          <Link href="/work">Work</Link>
-        </Nav>
+        <Navigation currentRoute={router.route} light={true}></Navigation>
       </Main>
     </div>
   );

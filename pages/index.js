@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Navigation from "../components/Navigation";
 import styled from "styled-components";
 
 const Main = styled.main`
@@ -33,25 +34,7 @@ const BoldText = styled.span`
   font-weight: 900;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  font-size: 24px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-`;
-
-const LinkSpacer = styled.span`
-  margin-left: 32px;
-  display: inline-block;
-`;
-
-export default function Home() {
+export default function Home({ router }) {
   return (
     <div>
       <Head>
@@ -65,11 +48,7 @@ export default function Home() {
           <br /> my name is <BoldText>Joren Rothman</BoldText>
           <br /> I am a <BoldText>webdeveloper</BoldText>.
         </Title>
-        <Nav>
-          <Link href="/work">Work</Link>
-          <LinkSpacer></LinkSpacer>
-          <Link href="/contact">Contact</Link>
-        </Nav>
+        <Navigation light={true} currentRoute={router.route}></Navigation>
       </Main>
     </div>
   );
