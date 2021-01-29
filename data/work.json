@@ -4,37 +4,43 @@
       "id": "1",
       "title": "Todo App",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut"
     },
     {
       "id": "2",
       "title": "Rest API",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "lorem ipsum"
     },
     {
       "id": "3",
       "title": "E-commerce",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "lorem ipsum"
     },
     {
       "id": "4",
       "title": "Todo App",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "lorem ipsum"
     },
     {
       "id": "5",
       "title": "Rest API",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "lorem ipsum"
     },
     {
       "id": "6",
       "title": "E-commerce",
       "image": "/images/work/orange-quarter.jpg",
-      "link": "https://google.com"
+      "link": "https://google.com",
+      "description": "lorem ipsum"
     }
   ]
 }

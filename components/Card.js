@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from "react";
+
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import { useState } from "react";
 
 const CardElement = styled.div`
   width: 100%;
@@ -8,6 +10,7 @@ const CardElement = styled.div`
   flex: 0 1 calc(100% / 3);
   padding-left: 42px;
   margin-top: 36px;
+  position: relative;
 
   @media (max-width: 1200px) {
     flex-basis: 50%;
@@ -26,11 +29,12 @@ const Image = styled.div`
   background-size: cover;
 `;
 
-const Header = styled.div`
+const Header = styled(motion.div)`
   padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
 `;
 
 const Title = styled.h3`
@@ -69,13 +73,40 @@ const Link = styled.a`
   background-position: center;
 `;
 
-export default function Card({ title, image, link }) {
+const Body = styled(motion.div)`
+  padding: 8px;
+  background-color: white;
+  position: absolute;
+  top: -1px;
+`;
+
+const variantsBody = {
+  open: { opacity: 1 },
+  closed: { opacity: 0 },
+};
+
+export default function Card({ title, image, link, description }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [bodyHeight, setBodyHeight] = useState(0);
+  const bodyRef = useRef(null);
+
+  const transform = {
+    open: { y: `-${bodyHeight}px` },
+    closed: { y: 0 },
+  };
+
+  useEffect(() => {
+    setBodyHeight(bodyRef.current?.clientHeight - 1);
+  }, [isOpen]);
 
   return (
     <CardElement>
       <Image style={{ backgroundImage: `url(${image})` }}></Image>
-      <div>
+      <motion.div
+        style={{ position: "relative" }}
+        animate={isOpen ? "open" : "closed"}
+        variants={transform}
+      >
         <Header>
           <Title>{title}</Title>
           <Buttons>
@@ -83,7 +114,17 @@ export default function Card({ title, image, link }) {
             <Link href={link} target="_blank"></Link>
           </Buttons>
         </Header>
-      </div>
+        {isOpen ? (
+          <Body
+            ref={bodyRef}
+            animate={isOpen ? "open" : "closed"}
+            variants={variantsBody}
+            className="card-body"
+          >
+            {description}
+          </Body>
+        ) : null}
+      </motion.div>
     </CardElement>
   );
 }
