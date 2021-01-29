@@ -11,6 +11,7 @@ const CardElement = styled.div`
   padding-left: 42px;
   margin-top: 36px;
   position: relative;
+  overflow: hidden;
 
   @media (max-width: 1200px) {
     flex-basis: 50%;
@@ -122,16 +123,15 @@ export default function Card({ title, image, link, description }) {
             <Link href={link} target="_blank"></Link>
           </Buttons>
         </Header>
-        {isOpen ? (
-          <Body
-            ref={bodyRef}
-            animate={isOpen ? "open" : "closed"}
-            variants={variantsBody}
-            className="card-body"
-          >
-            {description}
-          </Body>
-        ) : null}
+        <Body
+          ref={bodyRef}
+          animate={isOpen ? "open" : "closed"}
+          // variants={variantsBody}
+          // transition={{ duration: 0.3 }}
+          className="card-body"
+        >
+          {description}
+        </Body>
       </motion.div>
     </CardElement>
   );
