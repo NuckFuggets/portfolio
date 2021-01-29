@@ -77,7 +77,7 @@ const Body = styled(motion.div)`
   padding: 8px;
   background-color: white;
   position: absolute;
-  top: -1px;
+  /* top: -1px; */
 `;
 
 const variantsBody = {
@@ -88,16 +88,24 @@ const variantsBody = {
 export default function Card({ title, image, link, description }) {
   const [isOpen, setIsOpen] = useState(false);
   const [bodyHeight, setBodyHeight] = useState(0);
-  const bodyRef = useRef(null);
-
-  const transform = {
-    open: { y: `-${bodyHeight}px` },
+  const [transform, setTransform] = useState({
+    open: { y: 0 },
     closed: { y: 0 },
-  };
+  });
+
+  const bodyRef = useRef(null);
 
   useEffect(() => {
     setBodyHeight(bodyRef.current?.clientHeight - 1);
+
+    return null;
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isNaN(bodyHeight)) {
+      setTransform({ ...transform, open: { y: -bodyHeight } });
+    }
+  }, [bodyHeight]);
 
   return (
     <CardElement>
